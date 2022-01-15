@@ -43,4 +43,13 @@ class FractionTest extends AnyFunSuite {
   test("Mixed number created properly") {
     assert(Fraction(1, 2, 3) == Fraction(5, 3))
   }
+
+  test("Adding two fractions") {
+    assert(Fraction(2, 3) + Fraction(3, 5) == Fraction(19, 15))
+    assert(Fraction(5, 6) + Fraction(3, 8) == Fraction(29, 24))
+  }
+
+  test("Adding fraction and an integer") {
+    assert(Fraction(2, 3) + 5 == Fraction(5, 2, 3))
+  }
 }

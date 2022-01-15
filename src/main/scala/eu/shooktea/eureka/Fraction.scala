@@ -4,6 +4,18 @@ class Fraction private(val numerator: Int, val denominator: Int) {
   def toDouble: Double = numerator.toDouble / denominator.toDouble
   def roundToInt: Int = Math.round(numerator.toFloat / denominator.toFloat)
 
+  def add(f: Fraction): Fraction = {
+    val lcm = Utils.leastCommonMultiple(f.denominator, denominator)
+    Fraction(
+      numerator * lcm / denominator + f.numerator * lcm / f.denominator,
+      lcm
+    )
+  }
+  def +(f: Fraction): Fraction = add(f)
+
+  def add(i: Int): Fraction = Fraction(i, numerator, denominator)
+  def +(i: Int): Fraction = add(i)
+
   override def equals(obj: Any): Boolean = obj match {
     case Fraction(num, den) => num == numerator && den == denominator
     case _ => false
