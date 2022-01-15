@@ -26,4 +26,12 @@ class FractionTest extends AnyFunSuite {
     assert(-2 == fraction.numerator)
     assert(3 == fraction.denominator)
   }
+
+  test("Converting to double") {
+    assert(Fraction(1, 4).toDouble == 0.25)
+  }
+
+  test("Rounding to integers") {
+    assert(Fraction(5, 3).roundToInt == 2)
+  }
 }
