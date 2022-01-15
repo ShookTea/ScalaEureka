@@ -34,4 +34,13 @@ class FractionTest extends AnyFunSuite {
   test("Rounding to integers") {
     assert(Fraction(5, 3).roundToInt == 2)
   }
+
+  test("Comparing two fractions") {
+    assert(Fraction(-8, 12) == Fraction(-2, 3))
+    assert(Fraction(-8, 12) != Fraction(1, 5))
+  }
+
+  test("Mixed number created properly") {
+    assert(Fraction(1, 2, 3) == Fraction(5, 3))
+  }
 }
