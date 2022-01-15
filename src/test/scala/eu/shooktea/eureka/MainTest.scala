@@ -4,6 +4,6 @@ import org.scalatest.funsuite.AnyFunSuite
 
 class MainTest extends AnyFunSuite {
   test("Test framework installed correctly") {
-    assert(1 == 2)
+    assert(1 == 1)
   }
 }
