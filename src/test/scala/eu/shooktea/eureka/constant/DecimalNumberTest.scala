@@ -62,4 +62,11 @@ class DecimalNumberTest extends AnyFunSuite {
   test("multiplying decimal numbers") {
     assert(DecimalNumber(5.3) * DecimalNumber(0.7) == DecimalNumber(3.71))
   }
+
+  test("Mixed operations with integer numbers") {
+    assert(DecimalNumber(5) == IntegerNumber(5))
+    assert(DecimalNumber(5) + IntegerNumber(5) == IntegerNumber(10))
+    assert(DecimalNumber(5.3) - IntegerNumber(5) == DecimalNumber(0.3))
+    assert(DecimalNumber(1.5) * IntegerNumber(2) == IntegerNumber(3))
+  }
 }

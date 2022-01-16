@@ -38,4 +38,11 @@ class IntegerNumberTest extends AnyFunSuite {
   test("Multiplying integers") {
     assert(IntegerNumber(15) * IntegerNumber(33) == IntegerNumber(495))
   }
+
+  test("Mixed operations with decimal numbers") {
+    assert(IntegerNumber(5) == DecimalNumber(5))
+    assert(IntegerNumber(5) + DecimalNumber(3) == IntegerNumber(8))
+    assert(IntegerNumber(3) - DecimalNumber(0.2) == DecimalNumber(2.8))
+    assert(IntegerNumber(3) * DecimalNumber(0.2) == DecimalNumber(0.6))
+  }
 }
