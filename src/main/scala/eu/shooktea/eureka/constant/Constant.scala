@@ -25,4 +25,9 @@ trait Constant extends ConstantExtensions {
 
   def divideBy(other: Constant): Constant
   def /(other: Constant): Constant = divideBy(other)
+
+  def negation: Constant = IntegerNumber(0) - this
+  def unary_- : Constant = negation
+
+  def reciprocal: Constant = IntegerNumber(1) / this
 }

@@ -61,4 +61,12 @@ class IntegerNumberTest extends AnyFunSuite {
     assert(IntegerNumber(3) * DecimalNumber(0.2) == DecimalNumber(0.6))
     assert(IntegerNumber(3) / DecimalNumber(0.1) == DecimalNumber(30))
   }
+
+  test("Calculating negation") {
+    assert(-IntegerNumber(5) == IntegerNumber(-5))
+  }
+
+  test("Calculating reciprocal") {
+    assert(IntegerNumber(25).reciprocal == DecimalNumber(0.04))
+  }
 }
