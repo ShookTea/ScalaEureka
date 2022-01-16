@@ -15,16 +15,16 @@ trait Constant extends ConstantExtensions {
   def equals(obj: Any): Boolean
 
   def add(other: Constant): Constant
-  def +(other: Constant): Constant = add(other)
+  override def +(other: Constant): Constant = add(other)
 
   def subtract(other: Constant): Constant
-  def -(other: Constant): Constant = subtract(other)
+  override def -(other: Constant): Constant = subtract(other)
 
   def multiply(other: Constant): Constant
-  def *(other: Constant): Constant = multiply(other)
+  override def *(other: Constant): Constant = multiply(other)
 
   def divideBy(other: Constant): Constant
-  def /(other: Constant): Constant = divideBy(other)
+  override def /(other: Constant): Constant = divideBy(other)
 
   def negation: Constant = IntegerNumber(0) - this
   def unary_- : Constant = negation
