@@ -10,8 +10,6 @@
     <option name="classBuf">
       <list>
         <option value="eu.shooktea.eureka.UtilsTest" />
-        <option value="eu.shooktea.eureka.TypeExtensionsTest" />
-        <option value="eu.shooktea.eureka.constant.FractionTest" />
         <option value="eu.shooktea.eureka.constant.DecimalNumberTest" />
         <option value="eu.shooktea.eureka.extension.DoubleExtensionTest" />
         <option value="eu.shooktea.eureka.extension.StringExtensionTest" />
