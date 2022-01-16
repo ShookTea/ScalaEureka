@@ -1,6 +1,7 @@
 package eu.shooktea.eureka.func
 
 import eu.shooktea.eureka.constant.DecimalNumber
+import eu.shooktea.eureka.func.Function._
 import org.scalatest.funsuite.AnyFunSuite
 
 class VariableTest extends AnyFunSuite {
@@ -13,7 +14,7 @@ class VariableTest extends AnyFunSuite {
 
   test("Creating abs function") {
     val v = Variable()
-    val function = v.abs
+    val function = abs(v)
 
     assert(function(v -> DecimalNumber(5.3)) == DecimalNumber(5.3))
     assert(function(v -> DecimalNumber(-7.1)) == DecimalNumber(7.1))

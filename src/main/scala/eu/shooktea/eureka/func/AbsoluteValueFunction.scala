@@ -1,10 +1,8 @@
 package eu.shooktea.eureka.func
-import eu.shooktea.eureka.constant.{Constant, IntegerNumber}
+import eu.shooktea.eureka.constant.Constant
 
-class AbsoluteValueFunction(function1: Function) extends OneOpFunction(function1) {
-  override protected def calculateResult(argument1: Constant): Constant =
-    if (argument1 > IntegerNumber(0)) argument1
-    else -argument1
+class AbsoluteValueFunction(f1: Function) extends OneOpFunction(f1) {
+  override protected def calculateResult(a1: Constant): Constant = a1.abs
 }
 
 object AbsoluteValueFunction {

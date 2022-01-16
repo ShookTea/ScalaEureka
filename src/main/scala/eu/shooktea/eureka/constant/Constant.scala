@@ -42,6 +42,6 @@ trait Constant extends ConstantExtensions {
 
   def negation: Constant = IntegerNumber(0) - this
   def unary_- : Constant = negation
-
   def reciprocal: Constant = IntegerNumber(1) / this
+  def abs: Constant = if (this < IntegerNumber(0)) -this else this
 }
