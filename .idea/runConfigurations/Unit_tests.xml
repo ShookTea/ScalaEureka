@@ -7,6 +7,15 @@
       <list />
     </option>
     <option name="testKind" value="All in package" />
+    <option name="classBuf">
+      <list>
+        <option value="eu.shooktea.eureka.UtilsTest" />
+        <option value="eu.shooktea.eureka.TypeExtensionsTest" />
+        <option value="eu.shooktea.eureka.MainTest" />
+        <option value="eu.shooktea.eureka.constant.FractionTest" />
+        <option value="eu.shooktea.eureka.constant.DecimalNumberTest" />
+      </list>
+    </option>
     <option name="shortenClasspath" value="NONE" />
     <option name="workingDirectory" value="$PROJECT_DIR$" />
     <method v="2">
