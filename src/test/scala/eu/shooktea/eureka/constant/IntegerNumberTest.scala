@@ -26,4 +26,11 @@ class IntegerNumberTest extends AnyFunSuite {
   test("Converting to integer number") {
     assert(IntegerNumber(33).toIntegerNumber == IntegerNumber(33))
   }
+
+  test("Adding integers") {
+    assert(IntegerNumber(15) + IntegerNumber(33) == IntegerNumber(48))
+    assert(IntegerNumber(15) + 33 == IntegerNumber(48))
+    assert(IntegerNumber(15) + "33" == IntegerNumber(48))
+    assert(IntegerNumber(15) + BigInt(33) == IntegerNumber(48))
+  }
 }

@@ -11,6 +11,7 @@ class DecimalNumber private(val decimal: BigDecimal) extends Constant {
   override def toString: String = decimal.toString()
   override def equals(obj: Any): Boolean = obj match {
     case DecimalNumber(d) => decimal == d
+    case IntegerNumber(i) => decimal.toBigIntExact contains i
     case _ => false
   }
 

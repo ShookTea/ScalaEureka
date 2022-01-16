@@ -9,6 +9,8 @@ trait Constant extends ConstantExtensions {
   def toBigDecimal: BigDecimal
   def roundToBigInt: BigInt = toBigDecimal.setScale(0, RoundingMode.HALF_UP).toBigInt
 
+  def equals(obj: Any): Boolean
+
   def add(other: Constant): Constant
   def +(other: Constant): Constant = add(other)
 
@@ -26,4 +28,8 @@ object Constant {
   implicit def doubleToDecimalNumber(d: Double): DecimalNumber = DecimalNumber(d)
   implicit def longToDecimalNumber(l: Long): DecimalNumber = DecimalNumber(l)
   implicit def stringToDecimalNumber(s: String): DecimalNumber = DecimalNumber(s)
+
+  // Conversions to integer numbers
+  implicit def bigIntToIntegerNumber(bi: BigInt): IntegerNumber = IntegerNumber(bi)
+  implicit def longToIntegerNumber(l: Long): IntegerNumber = IntegerNumber(l)
 }

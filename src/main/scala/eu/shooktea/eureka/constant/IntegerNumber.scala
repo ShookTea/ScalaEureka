@@ -10,19 +10,23 @@ class IntegerNumber private(val integer: BigInt) extends Constant {
   override def toString: String = integer.toString()
   override def equals(obj: Any): Boolean = obj match {
     case IntegerNumber(i) => i == integer
+    case DecimalNumber(d) => d.toBigIntExact contains integer
     case _ => false
   }
 
   override def add(other: Constant): Constant = other match {
     case other: IntegerNumber => IntegerNumber(integer + other.integer)
+    case other: DecimalNumber => this.toBigDecimal + other
   }
 
   override def subtract(other: Constant): Constant = other match {
     case other: IntegerNumber => IntegerNumber(integer - other.integer)
+    case other: DecimalNumber => this.toBigDecimal - other
   }
 
   override def multiply(other: Constant): Constant = other match {
     case other: IntegerNumber => IntegerNumber(integer * other.integer)
+    case other: DecimalNumber => this.toDecimalNumber * other
   }
 }
 
