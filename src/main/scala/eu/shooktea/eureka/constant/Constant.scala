@@ -14,6 +14,9 @@ trait Constant extends ConstantExtensions {
 
   def subtract(other: Constant): Constant
   def -(other: Constant): Constant = subtract(other)
+
+  def multiply(other: Constant): Constant
+  def *(other: Constant): Constant = multiply(other)
 }
 
 object Constant {
