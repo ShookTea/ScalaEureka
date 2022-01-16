@@ -5,10 +5,14 @@ class DecimalNumber private(val decimal: BigDecimal) extends Constant {
   override def toDecimalNumber: DecimalNumber = this
 
   override def hashCode(): Int = decimal.hashCode()
+  override def toString: String = decimal.toString()
   override def equals(obj: Any): Boolean = obj match {
     case DecimalNumber(d) => decimal == d
     case _ => false
   }
+
+  def +(other: DecimalNumber): DecimalNumber = add(other)
+  def add(other: DecimalNumber): DecimalNumber = new DecimalNumber(decimal + other.decimal)
 }
 
 object DecimalNumber {
