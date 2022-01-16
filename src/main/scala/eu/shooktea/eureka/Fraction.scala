@@ -1,8 +1,7 @@
 package eu.shooktea.eureka
 
-class Fraction private(val numerator: Int, val denominator: Int) {
-  def toDouble: Double = numerator.toDouble / denominator.toDouble
-  def roundToInt: Int = Math.round(numerator.toFloat / denominator.toFloat)
+class Fraction private(val numerator: Int, val denominator: Int) extends Constant {
+  override def toBigDecimal: BigDecimal = BigDecimal(numerator) / BigDecimal(denominator)
 
   def add(f: Fraction): Fraction = {
     val lcm = Utils.leastCommonMultiple(f.denominator, denominator)
