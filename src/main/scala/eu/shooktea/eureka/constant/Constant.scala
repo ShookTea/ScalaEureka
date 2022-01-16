@@ -15,6 +15,8 @@ trait Constant extends ConstantExtensions {
 
   def equals(obj: Any): Boolean
   def ==(l: Long): Boolean = equals(l)
+  def ==(i: Int): Boolean = equals(i)
+  def ==(d: Double): Boolean = equals(d)
   def toConstFunction: ConstantFunction = ConstantFunction(this)
 
   def add(other: Constant): Constant
