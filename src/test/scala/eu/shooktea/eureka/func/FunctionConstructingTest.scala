@@ -28,8 +28,8 @@ class FunctionConstructingTest extends AnyFunSuite {
     val f = (func1 + func2) * 0.5
 
     val result = f(
-      x -> IntegerNumber(-3),
-      y -> IntegerNumber(15),
+      x -> -3,
+      y -> 15,
     )
 
     assert(result == 29.5)
