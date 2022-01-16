@@ -13,8 +13,11 @@
         <option value="eu.shooktea.eureka.TypeExtensionsTest" />
         <option value="eu.shooktea.eureka.constant.FractionTest" />
         <option value="eu.shooktea.eureka.constant.DecimalNumberTest" />
-        <option value="eu.shooktea.eureka.extension.LongExtensionTest" />
+        <option value="eu.shooktea.eureka.extension.DoubleExtensionTest" />
         <option value="eu.shooktea.eureka.extension.StringExtensionTest" />
+        <option value="eu.shooktea.eureka.extension.BigDecimalExtensionTest" />
+        <option value="eu.shooktea.eureka.extension.LongExtensionTest" />
+        <option value="eu.shooktea.eureka.extension.BigIntExtensionTest" />
       </list>
     </option>
     <option name="shortenClasspath" value="NONE" />
