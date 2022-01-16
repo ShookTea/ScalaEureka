@@ -16,6 +16,6 @@ class FunctionConstructingTest extends AnyFunSuite {
       y -> IntegerNumber(-2),
     )
 
-    assert(result == IntegerNumber(2))
+    assert(result == 2)
   }
 }

@@ -1,5 +1,7 @@
 package eu.shooktea.eureka.constant
 
+import eu.shooktea.eureka.extension.AllExtensions._
+
 class IntegerNumber private(val integer: BigInt) extends Constant {
   override def toBigDecimal: BigDecimal = BigDecimal(integer)
   override def roundToBigInt: BigInt = integer
@@ -11,6 +13,11 @@ class IntegerNumber private(val integer: BigInt) extends Constant {
   override def equals(obj: Any): Boolean = obj match {
     case IntegerNumber(i) => i == integer
     case DecimalNumber(d) => d.toBigIntExact contains integer
+    case i: BigInt => i == integer
+    case l: Long => integer == l.toIntegerNumber.integer
+    case i: Int => integer == i.toIntegerNumber.integer
+    case d: BigDecimal => toDecimalNumber.decimal == d.toDecimalNumber.decimal
+    case d: Double => toDecimalNumber.decimal == d.toDecimalNumber.decimal
     case _ => false
   }
 

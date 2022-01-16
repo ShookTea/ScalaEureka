@@ -14,6 +14,7 @@ trait Constant extends ConstantExtensions {
   override def toIntegerNumber: IntegerNumber = IntegerNumber(roundToBigInt)
 
   def equals(obj: Any): Boolean
+  def ==(l: Long): Boolean = equals(l)
   def toConstFunction: ConstantFunction = ConstantFunction(this)
 
   def add(other: Constant): Constant
