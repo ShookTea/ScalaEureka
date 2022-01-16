@@ -37,4 +37,9 @@ class DecimalNumberTest extends AnyFunSuite {
     assert(decimal.toBigDecimal == BigDecimal("0.3"))
     assert(decimal.roundToBigInt == BigInt(0))
   }
+
+  test("Comparing decimal numbers") {
+    assert(DecimalNumber(5.3) == DecimalNumber("5.3"))
+    assert(DecimalNumber(-3.5) != DecimalNumber("5.3"))
+  }
 }
