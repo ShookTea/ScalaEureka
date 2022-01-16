@@ -39,6 +39,16 @@ class IntegerNumberTest extends AnyFunSuite {
     assert(IntegerNumber(15) * IntegerNumber(33) == IntegerNumber(495))
   }
 
+  test("Calculating GCD") {
+    assert((IntegerNumber(5) gcd IntegerNumber(1)) == IntegerNumber(1))
+    assert((IntegerNumber(4) gcd IntegerNumber(6)) == IntegerNumber(2))
+  }
+
+  test("Calculating LCM") {
+    assert((IntegerNumber(3) lcm IntegerNumber(5)) == IntegerNumber(15))
+    assert((IntegerNumber(6) lcm IntegerNumber(8)) == IntegerNumber(24))
+  }
+
   test("Mixed operations with decimal numbers") {
     assert(IntegerNumber(5) == DecimalNumber(5))
     assert(IntegerNumber(5) + DecimalNumber(3) == IntegerNumber(8))

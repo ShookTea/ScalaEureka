@@ -28,6 +28,13 @@ class IntegerNumber private(val integer: BigInt) extends Constant {
     case other: IntegerNumber => IntegerNumber(integer * other.integer)
     case other: DecimalNumber => this.toDecimalNumber * other
   }
+
+  def gcd(other: IntegerNumber): IntegerNumber =
+    IntegerNumber(integer gcd other.integer)
+
+  def lcm(other: IntegerNumber): IntegerNumber =
+    if (integer == BigInt(0) && other.integer == BigInt(0)) IntegerNumber(0)
+    else IntegerNumber((integer * other.integer).abs / (integer gcd other.integer))
 }
 
 object IntegerNumber {

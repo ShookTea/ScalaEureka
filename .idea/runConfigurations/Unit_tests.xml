@@ -9,7 +9,6 @@
     <option name="testKind" value="All in package" />
     <option name="classBuf">
       <list>
-        <option value="eu.shooktea.eureka.UtilsTest" />
         <option value="eu.shooktea.eureka.constant.DecimalNumberTest" />
         <option value="eu.shooktea.eureka.constant.IntegerNumberTest" />
         <option value="eu.shooktea.eureka.extension.LongExtensionTest" />
