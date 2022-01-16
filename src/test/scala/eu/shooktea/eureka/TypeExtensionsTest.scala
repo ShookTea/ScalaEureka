@@ -1,8 +1,8 @@
 package eu.shooktea.eureka
 
 import org.scalatest.funsuite.AnyFunSuite
-
 import eu.shooktea.eureka.TypeExtensions._
+import eu.shooktea.eureka.constant._
 
 class TypeExtensionsTest extends AnyFunSuite {
   test("Adding fraction to int") {

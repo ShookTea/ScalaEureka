@@ -1,8 +1,6 @@
-package eu.shooktea.eureka
+package eu.shooktea.eureka.constant
 
 import org.scalatest.funsuite.AnyFunSuite
-
-import java.math.MathContext
 
 class FractionTest extends AnyFunSuite {
   test("Fraction created properly") {

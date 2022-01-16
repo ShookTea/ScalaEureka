@@ -1,4 +1,6 @@
-package eu.shooktea.eureka
+package eu.shooktea.eureka.constant
+
+import eu.shooktea.eureka.Utils
 
 class Fraction private(val numerator: Int, val denominator: Int) extends Constant {
   override def toBigDecimal: BigDecimal = BigDecimal(numerator) / BigDecimal(denominator)

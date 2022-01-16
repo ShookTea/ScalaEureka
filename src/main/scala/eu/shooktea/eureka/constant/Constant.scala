@@ -1,4 +1,4 @@
-package eu.shooktea.eureka
+package eu.shooktea.eureka.constant
 
 import scala.math.BigDecimal.RoundingMode
 
