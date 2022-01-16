@@ -29,6 +29,11 @@ class IntegerNumber private(val integer: BigInt) extends Constant {
     case other: DecimalNumber => this.toDecimalNumber * other
   }
 
+  override def divideBy(other: Constant): Constant = other match {
+    case other: IntegerNumber if integer % other.integer == 0 => IntegerNumber(integer / other.integer)
+    case c: Constant => this.toDecimalNumber / c.toDecimalNumber
+  }
+
   def gcd(other: IntegerNumber): IntegerNumber =
     IntegerNumber(integer gcd other.integer)
 

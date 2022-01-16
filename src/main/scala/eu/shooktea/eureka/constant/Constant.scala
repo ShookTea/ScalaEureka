@@ -22,4 +22,7 @@ trait Constant extends ConstantExtensions {
 
   def multiply(other: Constant): Constant
   def *(other: Constant): Constant = multiply(other)
+
+  def divideBy(other: Constant): Constant
+  def /(other: Constant): Constant = divideBy(other)
 }

@@ -10,25 +10,21 @@ class DecimalNumber private(val decimal: BigDecimal) extends Constant {
   override def hashCode(): Int = decimal.hashCode()
   override def toString: String = decimal.toString()
   override def equals(obj: Any): Boolean = obj match {
-    case DecimalNumber(d) => decimal == d
-    case IntegerNumber(i) => decimal.toBigIntExact contains i
+    case c: Constant => decimal == c.toDecimalNumber.decimal
     case _ => false
   }
 
-  override def add(other: Constant): Constant = other match {
-    case other: DecimalNumber => new DecimalNumber(decimal + other.decimal)
-    case other: IntegerNumber => this + other.toDecimalNumber
-  }
+  override def add(other: Constant): Constant =
+    new DecimalNumber(decimal + other.toDecimalNumber.decimal)
 
-  override def subtract(other: Constant): Constant = other match {
-    case other: DecimalNumber => new DecimalNumber(decimal - other.decimal)
-    case other: IntegerNumber => this - other.toDecimalNumber
-  }
+  override def subtract(other: Constant): Constant =
+    new DecimalNumber(decimal - other.toDecimalNumber.decimal)
 
-  override def multiply(other: Constant): Constant = other match {
-    case other: DecimalNumber => new DecimalNumber(decimal * other.decimal)
-    case other: IntegerNumber => this * other.toDecimalNumber
-  }
+  override def multiply(other: Constant): Constant =
+    new DecimalNumber(decimal * other.toDecimalNumber.decimal)
+
+  override def divideBy(other: Constant): Constant =
+    new DecimalNumber(decimal / other.toDecimalNumber.decimal)
 }
 
 object DecimalNumber {
