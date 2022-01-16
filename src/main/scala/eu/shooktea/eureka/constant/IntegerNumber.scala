@@ -16,12 +16,12 @@ class IntegerNumber private(val integer: BigInt) extends Constant {
 
   override def add(other: Constant): Constant = other match {
     case other: IntegerNumber => IntegerNumber(integer + other.integer)
-    case other: DecimalNumber => this.toBigDecimal + other
+    case other: DecimalNumber => this.toDecimalNumber + other
   }
 
   override def subtract(other: Constant): Constant = other match {
     case other: IntegerNumber => IntegerNumber(integer - other.integer)
-    case other: DecimalNumber => this.toBigDecimal - other
+    case other: DecimalNumber => this.toDecimalNumber - other
   }
 
   override def multiply(other: Constant): Constant = other match {

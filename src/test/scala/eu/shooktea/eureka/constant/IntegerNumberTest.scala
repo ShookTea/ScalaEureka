@@ -29,8 +29,13 @@ class IntegerNumberTest extends AnyFunSuite {
 
   test("Adding integers") {
     assert(IntegerNumber(15) + IntegerNumber(33) == IntegerNumber(48))
-    assert(IntegerNumber(15) + 33 == IntegerNumber(48))
-    assert(IntegerNumber(15) + "33" == IntegerNumber(48))
-    assert(IntegerNumber(15) + BigInt(33) == IntegerNumber(48))
+  }
+
+  test("Subtracting integers") {
+    assert(IntegerNumber(15) - IntegerNumber(33) == IntegerNumber(-18))
+  }
+
+  test("Multiplying integers") {
+    assert(IntegerNumber(15) * IntegerNumber(33) == IntegerNumber(495))
   }
 }

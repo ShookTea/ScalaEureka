@@ -1,24 +1,12 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="Unit tests" type="ScalaTestRunConfiguration" factoryName="ScalaTest" show_console_on_std_err="false" show_console_on_std_out="false">
-    <module name="ScalaEureka" />
+    <module name="Projects.ScalaEureka" />
     <option name="allowRunningInParallel" value="false" />
     <option name="projectPathOnTarget" />
     <option name="selectedOptions">
       <list />
     </option>
     <option name="testKind" value="All in package" />
-    <option name="classBuf">
-      <list>
-        <option value="eu.shooktea.eureka.UtilsTest" />
-        <option value="eu.shooktea.eureka.constant.IntegerNumberTest" />
-        <option value="eu.shooktea.eureka.constant.DecimalNumberTest" />
-        <option value="eu.shooktea.eureka.extension.DoubleExtensionTest" />
-        <option value="eu.shooktea.eureka.extension.StringExtensionTest" />
-        <option value="eu.shooktea.eureka.extension.BigDecimalExtensionTest" />
-        <option value="eu.shooktea.eureka.extension.LongExtensionTest" />
-        <option value="eu.shooktea.eureka.extension.BigIntExtensionTest" />
-      </list>
-    </option>
     <option name="shortenClasspath" value="NONE" />
     <option name="workingDirectory" value="$PROJECT_DIR$" />
     <method v="2">

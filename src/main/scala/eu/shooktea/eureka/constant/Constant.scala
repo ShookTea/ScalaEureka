@@ -20,16 +20,3 @@ trait Constant extends ConstantExtensions {
   def multiply(other: Constant): Constant
   def *(other: Constant): Constant = multiply(other)
 }
-
-object Constant {
-  // Conversions to decimal numbers
-  implicit def bigDecimalToDecimalNumber(bd: BigDecimal): DecimalNumber = DecimalNumber(bd)
-  implicit def bigIntToDecimalNumber(bi: BigInt): DecimalNumber = DecimalNumber(bi)
-  implicit def doubleToDecimalNumber(d: Double): DecimalNumber = DecimalNumber(d)
-  implicit def longToDecimalNumber(l: Long): DecimalNumber = DecimalNumber(l)
-  implicit def stringToDecimalNumber(s: String): DecimalNumber = DecimalNumber(s)
-
-  // Conversions to integer numbers
-  implicit def bigIntToIntegerNumber(bi: BigInt): IntegerNumber = IntegerNumber(bi)
-  implicit def longToIntegerNumber(l: Long): IntegerNumber = IntegerNumber(l)
-}
