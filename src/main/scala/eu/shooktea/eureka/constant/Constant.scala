@@ -1,15 +1,19 @@
 package eu.shooktea.eureka.constant
 
-import eu.shooktea.eureka.extension.AllExtensions
+import eu.shooktea.eureka.extension.AllExtensions._
 
 import scala.language.implicitConversions
 import scala.math.BigDecimal.RoundingMode
 
-trait Constant extends AllExtensions.ConstantExtensions {
+trait Constant extends ConstantExtensions {
   def toBigDecimal: BigDecimal
   def roundToBigInt: BigInt = toBigDecimal.setScale(0, RoundingMode.HALF_UP).toBigInt
 }
 
 object Constant {
-  implicit def longToDecimalNumber(long: Long): DecimalNumber = DecimalNumber(long)
+  implicit def bigDecimalToDecimalNumber(bd: BigDecimal): DecimalNumber = DecimalNumber(bd)
+  implicit def bigIntToDecimalNumber(bi: BigInt): DecimalNumber = DecimalNumber(bi)
+  implicit def doubleToDecimalNumber(d: Double): DecimalNumber = DecimalNumber(d)
+  implicit def longToDecimalNumber(l: Long): DecimalNumber = DecimalNumber(l)
+  implicit def stringToDecimalNumber(s: String): DecimalNumber = DecimalNumber(s)
 }

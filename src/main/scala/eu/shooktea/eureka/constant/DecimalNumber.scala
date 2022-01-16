@@ -13,8 +13,10 @@ class DecimalNumber private(val decimal: BigDecimal) extends Constant {
     case _ => false
   }
 
-  def +(other: DecimalNumber): DecimalNumber = add(other)
-  def add(other: DecimalNumber): DecimalNumber = new DecimalNumber(decimal + other.decimal)
+  def +(other: Constant): DecimalNumber = add(other)
+  def add(other: Constant): DecimalNumber = other match {
+    case other: DecimalNumber => new DecimalNumber(decimal + other.decimal)
+  }
 }
 
 object DecimalNumber {
