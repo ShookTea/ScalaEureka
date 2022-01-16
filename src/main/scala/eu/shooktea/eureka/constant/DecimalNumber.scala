@@ -16,6 +16,10 @@ class DecimalNumber private(val decimal: BigDecimal) extends Constant {
   override def add(other: Constant): Constant = other match {
     case other: DecimalNumber => new DecimalNumber(decimal + other.decimal)
   }
+
+  override def subtract(other: Constant): Constant = other match {
+    case other: DecimalNumber => new DecimalNumber(decimal - other.decimal)
+  }
 }
 
 object DecimalNumber {

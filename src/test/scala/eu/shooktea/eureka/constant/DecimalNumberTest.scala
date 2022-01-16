@@ -55,4 +55,13 @@ class DecimalNumberTest extends AnyFunSuite {
     assert(DecimalNumber(5.3) + 7 == DecimalNumber(12.3))
     assert(DecimalNumber(5.3) + BigInt(7) == DecimalNumber(12.3))
   }
+
+  test("subtracting decimal numbers") {
+    assert(DecimalNumber(5.3) - DecimalNumber(0.7) == DecimalNumber(4.6))
+    assert(DecimalNumber(5.3) - 0.7 == DecimalNumber(4.6))
+    assert(DecimalNumber(5.3) - "0.7" == DecimalNumber(4.6))
+    assert(DecimalNumber(5.3) - BigDecimal("0.7") == DecimalNumber(4.6))
+    assert(DecimalNumber(5.3) - 7 == DecimalNumber(-1.7))
+    assert(DecimalNumber(5.3) - BigInt(7) == DecimalNumber(-1.7))
+  }
 }
