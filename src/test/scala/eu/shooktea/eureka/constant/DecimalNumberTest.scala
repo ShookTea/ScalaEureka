@@ -50,4 +50,8 @@ class DecimalNumberTest extends AnyFunSuite {
   test("adding decimal numbers") {
     assert(DecimalNumber(5.3) + DecimalNumber(0.7) == DecimalNumber(6.0))
   }
+
+  test("adding integer") {
+    assert(DecimalNumber(5.3) + 7 == DecimalNumber(12.3))
+  }
 }

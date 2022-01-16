@@ -1,5 +1,7 @@
 package eu.shooktea.eureka.constant
 
+import scala.language.implicitConversions
+
 class DecimalNumber private(val decimal: BigDecimal) extends Constant {
   override def toBigDecimal: BigDecimal = decimal
   override def toDecimalNumber: DecimalNumber = this
