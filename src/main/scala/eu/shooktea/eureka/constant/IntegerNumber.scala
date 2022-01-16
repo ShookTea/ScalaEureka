@@ -4,10 +4,10 @@ class IntegerNumber private(val integer: BigInt) extends Constant {
   override def toBigDecimal: BigDecimal = BigDecimal(integer)
   override def roundToBigInt: BigInt = integer
   override def toDecimalNumber: DecimalNumber = DecimalNumber(toBigDecimal)
+  override def toIntegerNumber: IntegerNumber = this
 
   override def hashCode(): Int = integer.hashCode()
   override def toString: String = integer.toString()
-
   override def equals(obj: Any): Boolean = obj match {
     case IntegerNumber(i) => i == integer
     case _ => false
@@ -31,5 +31,7 @@ object IntegerNumber {
   def unapply(arg: IntegerNumber): Option[BigInt] = Some(arg.integer)
 
   def apply(long: Long): IntegerNumber = IntegerNumber(BigInt(long))
-  def apply(string: String): IntegerNumber = IntegerNumber(BigInt(string))
+  def apply(bigDecimal: BigDecimal): IntegerNumber = DecimalNumber(bigDecimal).toIntegerNumber
+  def apply(string: String): IntegerNumber = IntegerNumber(BigDecimal(string))
+  def apply(double: Double): IntegerNumber = IntegerNumber(BigDecimal(double))
 }

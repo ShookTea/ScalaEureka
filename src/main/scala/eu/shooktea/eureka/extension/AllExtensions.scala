@@ -1,6 +1,6 @@
 package eu.shooktea.eureka.extension
 
-import eu.shooktea.eureka.constant.DecimalNumber
+import eu.shooktea.eureka.constant._
 
 object AllExtensions extends LongExtension
                         with StringExtension
@@ -11,6 +11,7 @@ object AllExtensions extends LongExtension
 
   trait ConstantExtensions {
     def toDecimalNumber: DecimalNumber
+    def toIntegerNumber: IntegerNumber
   }
 
 }

@@ -47,6 +47,10 @@ class DecimalNumberTest extends AnyFunSuite {
     assert(DecimalNumber(5.3).toDecimalNumber == DecimalNumber(5.3))
   }
 
+  test("converting to integer number") {
+    assert(DecimalNumber(7.9).toIntegerNumber == IntegerNumber(8))
+  }
+
   test("adding decimal numbers") {
     assert(DecimalNumber(5.3) + DecimalNumber(0.7) == DecimalNumber(6.0))
     assert(DecimalNumber(5.3) + 0.7 == DecimalNumber(6.0))

@@ -18,4 +18,12 @@ class IntegerNumberTest extends AnyFunSuite {
   test("Comparing values") {
     assert(IntegerNumber("33") == IntegerNumber(33))
   }
+
+  test("Converting to decimal number") {
+    assert(IntegerNumber("33").toDecimalNumber == DecimalNumber(33.0))
+  }
+
+  test("Converting to integer number") {
+    assert(IntegerNumber(33).toIntegerNumber == IntegerNumber(33))
+  }
 }
