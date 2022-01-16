@@ -14,6 +14,7 @@ trait Constant extends ConstantExtensions {
 }
 
 object Constant {
+  // Conversions to decimal numbers
   implicit def bigDecimalToDecimalNumber(bd: BigDecimal): DecimalNumber = DecimalNumber(bd)
   implicit def bigIntToDecimalNumber(bi: BigInt): DecimalNumber = DecimalNumber(bi)
   implicit def doubleToDecimalNumber(d: Double): DecimalNumber = DecimalNumber(d)
