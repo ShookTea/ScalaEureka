@@ -1,6 +1,7 @@
 package eu.shooktea.eureka.extension
 
 import eu.shooktea.eureka.constant._
+import eu.shooktea.eureka.func._
 
 object AllExtensions extends LongExtension
                         with StringExtension
@@ -12,10 +13,13 @@ object AllExtensions extends LongExtension
   trait ConstantExtensions {
     def toDecimalNumber: DecimalNumber
     def toIntegerNumber: IntegerNumber
+
     def +(constant: Constant): Constant = toDecimalNumber + constant
     def -(constant: Constant): Constant = toDecimalNumber - constant
     def *(constant: Constant): Constant = toDecimalNumber * constant
     def /(constant: Constant): Constant = toDecimalNumber / constant
-  }
 
+    def +(f: Function): Function = AddFunction(ConstantFunction(toDecimalNumber), f)
+    def *(f: Function): Function = MultiplyFunction(ConstantFunction(toDecimalNumber), f)
+  }
 }
