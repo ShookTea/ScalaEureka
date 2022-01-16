@@ -34,6 +34,9 @@ class IntegerNumber private(val integer: BigInt) extends Constant {
     case c: Constant => this.toDecimalNumber / c.toDecimalNumber
   }
 
+  override def greaterThan(other: Constant): Boolean =
+    this.toDecimalNumber > other.toDecimalNumber
+
   def gcd(other: IntegerNumber): IntegerNumber =
     IntegerNumber(integer gcd other.integer)
 

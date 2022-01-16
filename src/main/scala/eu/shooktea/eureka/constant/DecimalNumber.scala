@@ -25,6 +25,9 @@ class DecimalNumber private(val decimal: BigDecimal) extends Constant {
 
   override def divideBy(other: Constant): Constant =
     new DecimalNumber(decimal / other.toDecimalNumber.decimal)
+
+  override def greaterThan(other: Constant): Boolean =
+    decimal > other.toDecimalNumber.decimal
 }
 
 object DecimalNumber {

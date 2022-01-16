@@ -26,6 +26,18 @@ trait Constant extends ConstantExtensions {
   def divideBy(other: Constant): Constant
   override def /(other: Constant): Constant = divideBy(other)
 
+  def greaterThan(other: Constant): Boolean
+  def >(other: Constant): Boolean = greaterThan(other)
+
+  def greaterThanOrEqual(other: Constant): Boolean = this > other || this == other
+  def >=(other: Constant): Boolean = greaterThanOrEqual(other)
+
+  def lesserThanOrEqual(other: Constant): Boolean = !greaterThan(other)
+  def <=(other: Constant): Boolean = lesserThanOrEqual(other)
+
+  def lesserThan(other: Constant): Boolean = lesserThanOrEqual(other) && !equals(other)
+  def <(other: Constant): Boolean = lesserThan(other)
+
   def negation: Constant = IntegerNumber(0) - this
   def unary_- : Constant = negation
 

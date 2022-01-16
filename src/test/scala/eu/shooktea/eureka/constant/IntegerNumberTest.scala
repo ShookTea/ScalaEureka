@@ -17,6 +17,11 @@ class IntegerNumberTest extends AnyFunSuite {
 
   test("Comparing values") {
     assert(IntegerNumber("33") == IntegerNumber(33))
+    assert(IntegerNumber(5) > IntegerNumber(4))
+    assert(IntegerNumber(-3) < IntegerNumber(7.5))
+    assert(IntegerNumber(5) >= IntegerNumber(3))
+    assert(IntegerNumber(5) >= IntegerNumber(5))
+    assert(IntegerNumber(5) <= IntegerNumber(5))
   }
 
   test("Converting to decimal number") {

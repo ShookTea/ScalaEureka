@@ -41,6 +41,11 @@ class DecimalNumberTest extends AnyFunSuite {
   test("Comparing decimal numbers") {
     assert(DecimalNumber(5.3) == DecimalNumber("5.3"))
     assert(DecimalNumber(-3.5) != DecimalNumber("5.3"))
+    assert(DecimalNumber(5) > DecimalNumber(4))
+    assert(DecimalNumber(-3) < DecimalNumber(7.5))
+    assert(DecimalNumber(5) >= DecimalNumber(3))
+    assert(DecimalNumber(5) >= DecimalNumber(5))
+    assert(DecimalNumber(5) <= DecimalNumber(5))
   }
 
   test("to decimal number conversion returns self") {

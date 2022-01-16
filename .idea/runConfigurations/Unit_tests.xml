@@ -10,6 +10,7 @@
     <option name="classBuf">
       <list>
         <option value="eu.shooktea.eureka.func.VariableTest" />
+        <option value="eu.shooktea.eureka.func.ConstantFunctionTest" />
         <option value="eu.shooktea.eureka.constant.DecimalNumberTest" />
         <option value="eu.shooktea.eureka.constant.IntegerNumberTest" />
         <option value="eu.shooktea.eureka.extension.DoubleExtensionTest" />
