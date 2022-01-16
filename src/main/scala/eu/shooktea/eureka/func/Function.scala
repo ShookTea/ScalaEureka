@@ -7,4 +7,6 @@ trait Function {
   def apply(args: Map[Variable,Constant]): Constant
 
   def abs: Function = AbsoluteValueFunction(this)
+  def +(other: Function): Function = AddFunction(this, other)
+  def +(other: Constant): Function = AddFunction(this, ConstantFunction(other))
 }

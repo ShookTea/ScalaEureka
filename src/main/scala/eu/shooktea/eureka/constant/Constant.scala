@@ -1,6 +1,7 @@
 package eu.shooktea.eureka.constant
 
 import eu.shooktea.eureka.extension.AllExtensions._
+import eu.shooktea.eureka.func._
 
 import scala.language.implicitConversions
 import scala.math.BigDecimal.RoundingMode
@@ -42,4 +43,6 @@ trait Constant extends ConstantExtensions {
   def unary_- : Constant = negation
 
   def reciprocal: Constant = IntegerNumber(1) / this
+
+  def +(f: Function): Function = AddFunction(ConstantFunction(this), f)
 }
