@@ -8,6 +8,9 @@ import scala.math.BigDecimal.RoundingMode
 trait Constant extends ConstantExtensions {
   def toBigDecimal: BigDecimal
   def roundToBigInt: BigInt = toBigDecimal.setScale(0, RoundingMode.HALF_UP).toBigInt
+
+  def add(other: Constant): Constant
+  def +(other: Constant): Constant = add(other)
 }
 
 object Constant {
