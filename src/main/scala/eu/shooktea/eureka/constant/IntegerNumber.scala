@@ -1,0 +1,35 @@
+package eu.shooktea.eureka.constant
+
+class IntegerNumber private(val integer: BigInt) extends Constant {
+  override def toBigDecimal: BigDecimal = BigDecimal(integer)
+  override def roundToBigInt: BigInt = integer
+  override def toDecimalNumber: DecimalNumber = DecimalNumber(toBigDecimal)
+
+  override def hashCode(): Int = integer.hashCode()
+  override def toString: String = integer.toString()
+
+  override def equals(obj: Any): Boolean = obj match {
+    case IntegerNumber(i) => i == integer
+    case _ => false
+  }
+
+  override def add(other: Constant): Constant = other match {
+    case other: IntegerNumber => IntegerNumber(integer + other.integer)
+  }
+
+  override def subtract(other: Constant): Constant = other match {
+    case other: IntegerNumber => IntegerNumber(integer - other.integer)
+  }
+
+  override def multiply(other: Constant): Constant = other match {
+    case other: IntegerNumber => IntegerNumber(integer * other.integer)
+  }
+}
+
+object IntegerNumber {
+  def apply(integer: BigInt): IntegerNumber = new IntegerNumber(integer)
+  def unapply(arg: IntegerNumber): Option[BigInt] = Some(arg.integer)
+
+  def apply(long: Long): IntegerNumber = IntegerNumber(BigInt(long))
+  def apply(string: String): IntegerNumber = IntegerNumber(BigInt(string))
+}
