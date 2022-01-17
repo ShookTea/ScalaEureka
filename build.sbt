@@ -1,6 +1,7 @@
-name := "ScalaEureka"
+name := "eureka"
+organization := "eu.shooktea"
 
-version := "0.1"
+version := sys.env.getOrElse("ARTIFACT_VERSION", "0.0.0-SNAPSHOT")
 
 scalaVersion := "2.13.8"
 
