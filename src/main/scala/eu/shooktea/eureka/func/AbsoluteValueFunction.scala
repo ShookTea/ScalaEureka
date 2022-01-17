@@ -5,7 +5,7 @@ class AbsoluteValueFunction(f1: Function) extends OneOpFunction(f1) {
   override def toString: String = s"abs($f1)"
 
   override protected def calculateResult(a1: Constant): Constant = a1.abs
-  override def derivative: Function = (f1 / AbsoluteValueFunction(f1)) * f1.derivative
+  override def derivative(v: Variable): Function = (f1 / AbsoluteValueFunction(f1)) * f1.d(v)
 }
 
 object AbsoluteValueFunction {
