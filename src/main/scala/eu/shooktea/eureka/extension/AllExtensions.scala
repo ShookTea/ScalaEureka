@@ -20,6 +20,8 @@ object AllExtensions extends LongExtension
     def /(constant: Constant): Constant = toDecimalNumber / constant
 
     def +(f: Function): Function = AddFunction(ConstantFunction(toDecimalNumber), f)
+    def -(f: Function): Function = SubtractFunction(ConstantFunction(toDecimalNumber), f)
     def *(f: Function): Function = MultiplyFunction(ConstantFunction(toDecimalNumber), f)
+    def /(f: Function): Function = DivideFunction(ConstantFunction(toDecimalNumber), f)
   }
 }

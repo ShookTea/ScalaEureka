@@ -21,18 +21,32 @@ trait Function {
   def apply(args: Map[Variable,Constant]): Constant
 
   def +(other: Function): Function = AddFunction(this, other)
-  def +(other: Constant): Function = AddFunction(this, ConstantFunction(other))
-  def +(other: BigInt): Function = AddFunction(this, other.toDecimalNumber.toConstFunction)
-  def +(other: Long): Function = AddFunction(this, other.toDecimalNumber.toConstFunction)
-  def +(other: BigDecimal): Function = AddFunction(this, other.toDecimalNumber.toConstFunction)
-  def +(other: Double): Function = AddFunction(this, other.toDecimalNumber.toConstFunction)
+  def +(other: Constant): Function = this + other.toConstFunction
+  def +(other: BigInt): Function = this + other.toDecimalNumber
+  def +(other: Long): Function = this + other.toDecimalNumber
+  def +(other: BigDecimal): Function = this + other.toDecimalNumber
+  def +(other: Double): Function = this + other.toDecimalNumber
+
+  def -(other: Function): Function = SubtractFunction(this, other)
+  def -(other: Constant): Function = this - other.toConstFunction
+  def -(other: BigInt): Function = this - other.toDecimalNumber
+  def -(other: Long): Function = this - other.toDecimalNumber
+  def -(other: BigDecimal): Function = this - other.toDecimalNumber
+  def -(other: Double): Function = this - other.toDecimalNumber
 
   def *(other: Function): Function = MultiplyFunction(this, other)
-  def *(other: Constant): Function = MultiplyFunction(this, ConstantFunction(other))
-  def *(other: BigInt): Function = MultiplyFunction(this, other.toIntegerNumber.toConstFunction)
-  def *(other: Long): Function = MultiplyFunction(this, other.toIntegerNumber.toConstFunction)
-  def *(other: BigDecimal): Function = MultiplyFunction(this, other.toDecimalNumber.toConstFunction)
-  def *(other: Double): Function = MultiplyFunction(this, other.toDecimalNumber.toConstFunction)
+  def *(other: Constant): Function = this * other.toConstFunction
+  def *(other: BigInt): Function = this * other.toDecimalNumber
+  def *(other: Long): Function = this * other.toDecimalNumber
+  def *(other: BigDecimal): Function = this * other.toDecimalNumber
+  def *(other: Double): Function = this * other.toDecimalNumber
+
+  def /(other: Function): Function = DivideFunction(this, other)
+  def /(other: Constant): Function = this / other.toConstFunction
+  def /(other: BigInt): Function = this / other.toDecimalNumber
+  def /(other: Long): Function = this / other.toDecimalNumber
+  def /(other: BigDecimal): Function = this / other.toDecimalNumber
+  def /(other: Double): Function = this / other.toDecimalNumber
 }
 
 object Function {
