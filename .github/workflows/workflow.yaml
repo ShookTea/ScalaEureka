@@ -11,12 +11,14 @@ on:
     types: [ published ]
 
 jobs:
-  unit-tests:
+  scala:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Run unit tests
         run: sbt clean test
       - name: Publish
-        if: ${{ github.event_name == 'release' && github.event.action == 'published' }}
+        # if: ${{ github.event_name == 'release' && github.event.action == 'published' }}
         run: sbt publish
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
