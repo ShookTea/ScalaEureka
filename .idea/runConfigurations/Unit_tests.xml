@@ -9,12 +9,15 @@
     <option name="testKind" value="All in package" />
     <option name="classBuf">
       <list>
+        <option value="eu.shooktea.eureka.func.DerivativeTest" />
+        <option value="eu.shooktea.eureka.func.AddFunctionTest" />
+        <option value="eu.shooktea.eureka.func.DivideFunctionTest" />
+        <option value="eu.shooktea.eureka.func.ConstantFunctionTest" />
         <option value="eu.shooktea.eureka.func.MultiplyFunctionTest" />
+        <option value="eu.shooktea.eureka.func.SubtractFunctionTest" />
         <option value="eu.shooktea.eureka.func.FunctionConstructingTest" />
         <option value="eu.shooktea.eureka.func.AbsoluteValueFunctionTest" />
         <option value="eu.shooktea.eureka.func.VariableTest" />
-        <option value="eu.shooktea.eureka.func.AddFunctionTest" />
-        <option value="eu.shooktea.eureka.func.ConstantFunctionTest" />
         <option value="eu.shooktea.eureka.constant.DecimalNumberTest" />
         <option value="eu.shooktea.eureka.constant.IntegerNumberTest" />
         <option value="eu.shooktea.eureka.extension.DoubleExtensionTest" />

@@ -19,6 +19,7 @@ trait Function {
       })
     }.toMap)
   def apply(args: Map[Variable,Constant]): Constant
+  def derivative: Function
 
   def +(other: Function): Function = AddFunction(this, other)
   def +(other: Constant): Function = this + other.toConstFunction

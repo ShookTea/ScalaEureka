@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Projects.ScalaEureka.iml" filepath="$PROJECT_DIR$/.idea/modules/Projects.ScalaEureka.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/ScalaEureka.iml" filepath="$PROJECT_DIR$/.idea/modules/ScalaEureka.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/ScalaEureka-build.iml" filepath="$PROJECT_DIR$/.idea/modules/ScalaEureka-build.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/project.ScalaEureka-build.iml" filepath="$PROJECT_DIR$/.idea/modules/project.ScalaEureka-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/eureka.iml" filepath="$PROJECT_DIR$/.idea/modules/eureka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/eureka-build.iml" filepath="$PROJECT_DIR$/.idea/modules/eureka-build.iml" />
     </modules>
   </component>
 </project>
