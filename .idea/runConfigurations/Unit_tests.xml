@@ -18,7 +18,6 @@
         <option value="eu.shooktea.eureka.func.FunctionConstructingTest" />
         <option value="eu.shooktea.eureka.func.AbsoluteValueFunctionTest" />
         <option value="eu.shooktea.eureka.func.VariableTest" />
-        <option value="eu.shooktea.eureka.constant.DecimalNumberTest" />
         <option value="eu.shooktea.eureka.extension.DoubleExtensionTest" />
         <option value="eu.shooktea.eureka.extension.StringExtensionTest" />
         <option value="eu.shooktea.eureka.extension.BigDecimalExtensionTest" />
