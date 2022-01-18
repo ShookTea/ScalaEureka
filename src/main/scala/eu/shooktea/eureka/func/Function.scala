@@ -18,7 +18,12 @@ trait Function {
         case f: Float => f.toDecimalNumber
       })
     }.toMap)
-  def apply(args: Map[Variable,Constant]): Constant
+  def apply(args: Map[Variable,Constant]): Constant =
+    apply(args.map {
+      case (k, v) => (k, v.toBigDecimal)
+    }).toDecimalNumber
+
+  def apply(args: Map[Variable,BigDecimal]): BigDecimal
   def derivative(v: Variable): Function
   def d(v: Variable): Function = derivative(v)
 
