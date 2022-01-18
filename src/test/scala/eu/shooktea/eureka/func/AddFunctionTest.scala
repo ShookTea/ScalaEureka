@@ -1,6 +1,5 @@
 package eu.shooktea.eureka.func
 
-import eu.shooktea.eureka.constant.IntegerNumber
 import org.scalatest.funsuite.AnyFunSuite
 
 class AddFunctionTest extends AnyFunSuite {
@@ -9,7 +8,7 @@ class AddFunctionTest extends AnyFunSuite {
     val v2 = Variable()
     val f = AddFunction(v1, v2)
 
-    val result = f.apply(v1 -> IntegerNumber(3), v2 -> IntegerNumber(4))
-    assert(result == IntegerNumber(7))
+    val result = f.apply(v1 -> 3, v2 -> 4)
+    assert(result == 7)
   }
 }

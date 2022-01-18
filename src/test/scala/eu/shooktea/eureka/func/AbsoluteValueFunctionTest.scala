@@ -1,6 +1,5 @@
 package eu.shooktea.eureka.func
 
-import eu.shooktea.eureka.constant.IntegerNumber
 import org.scalatest.funsuite.AnyFunSuite
 
 class AbsoluteValueFunctionTest extends AnyFunSuite {
@@ -8,7 +7,7 @@ class AbsoluteValueFunctionTest extends AnyFunSuite {
     val v = Variable()
     val func = AbsoluteValueFunction(v)
 
-    assert(func((v, IntegerNumber(5))) == IntegerNumber(5))
-    assert(func((v, IntegerNumber(-3))) == IntegerNumber(3))
+    assert(func(v -> 5) == 5)
+    assert(func(v -> -3) == 3)
   }
 }

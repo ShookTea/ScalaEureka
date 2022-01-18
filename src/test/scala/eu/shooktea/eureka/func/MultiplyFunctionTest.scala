@@ -1,6 +1,5 @@
 package eu.shooktea.eureka.func
 
-import eu.shooktea.eureka.constant.{DecimalNumber, IntegerNumber}
 import org.scalatest.funsuite.AnyFunSuite
 
 class MultiplyFunctionTest extends AnyFunSuite {
@@ -9,6 +8,6 @@ class MultiplyFunctionTest extends AnyFunSuite {
     val y = Variable()
     val f = MultiplyFunction(x, y)
 
-    assert(f(x -> IntegerNumber(3), y -> DecimalNumber(2.5)) == DecimalNumber(7.5))
+    assert(f(x -> 3, y -> 2.5) == 7.5)
   }
 }
