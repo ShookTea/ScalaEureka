@@ -1,7 +1,5 @@
 package eu.shooktea.eureka.func
 
-import eu.shooktea.eureka.constant.Constant
-
 class ConstantFunction(val constant: BigDecimal) extends Function {
   override def toString: String = constant.toString
   override def apply(args: Map[Variable, BigDecimal]): BigDecimal = constant
@@ -9,6 +7,5 @@ class ConstantFunction(val constant: BigDecimal) extends Function {
 }
 
 object ConstantFunction {
-  def apply(constant: Constant): ConstantFunction = new ConstantFunction(constant.toBigDecimal)
   def apply(constant: BigDecimal): ConstantFunction = new ConstantFunction(constant)
 }
