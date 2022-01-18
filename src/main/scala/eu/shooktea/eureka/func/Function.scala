@@ -1,8 +1,5 @@
 package eu.shooktea.eureka.func
 
-import eu.shooktea.eureka.constant.Constant
-import eu.shooktea.eureka.extension.AllExtensions._
-
 trait Function {
   def apply(args: (Variable, Any)*): BigDecimal =
     apply(args.map {
@@ -17,10 +14,6 @@ trait Function {
         case v: Float => BigDecimal(v)
       })
     }.toMap)
-  def apply(args: Map[Variable,Constant]): Constant =
-    apply(args.map {
-      case (k, v) => (k, v.toBigDecimal)
-    }).toDecimalNumber
 
   def apply(args: Map[Variable,BigDecimal]): BigDecimal
   def derivative(v: Variable): Function
