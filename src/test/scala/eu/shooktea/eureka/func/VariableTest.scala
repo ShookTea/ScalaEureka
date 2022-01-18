@@ -6,8 +6,8 @@ import org.scalatest.funsuite.AnyFunSuite
 class VariableTest extends AnyFunSuite {
   test("Applying value to a single variable returns that value") {
     val variable = Variable()
-    val input = DecimalNumber(3.4)
+    val input = BigDecimal(3.4)
     val output = variable((variable, input))
-    assert(input == output)
+    assert(DecimalNumber(input) == output)
   }
 }
