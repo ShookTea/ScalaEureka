@@ -10,6 +10,6 @@ class BigDecimalExtensionTest extends AnyFunSuite {
   }
 
   test("Operations with constants") {
-    assert(BigDecimal(4.3) + IntegerNumber(5) == DecimalNumber(9.3))
+    assert(BigDecimal(4.3) + DecimalNumber(5) == DecimalNumber(9.3))
   }
 }
