@@ -52,10 +52,6 @@ class DecimalNumberTest extends AnyFunSuite {
     assert(DecimalNumber(5.3).toDecimalNumber == DecimalNumber(5.3))
   }
 
-  test("converting to integer number") {
-    assert(DecimalNumber(7.9).toIntegerNumber == IntegerNumber(8))
-  }
-
   test("adding decimal numbers") {
     assert(DecimalNumber(5.3) + DecimalNumber(0.7) == DecimalNumber(6.0))
   }
@@ -70,14 +66,6 @@ class DecimalNumberTest extends AnyFunSuite {
 
   test("Dividing decimal numbers") {
     assert(DecimalNumber(5.3) / DecimalNumber(10.0) == DecimalNumber(0.53))
-  }
-
-  test("Mixed operations with integer numbers") {
-    assert(DecimalNumber(5) == IntegerNumber(5))
-    assert(DecimalNumber(5) + IntegerNumber(5) == IntegerNumber(10))
-    assert(DecimalNumber(5.3) - IntegerNumber(5) == DecimalNumber(0.3))
-    assert(DecimalNumber(1.5) * IntegerNumber(2) == IntegerNumber(3))
-    assert(DecimalNumber(5.3) / IntegerNumber(10) == DecimalNumber(0.53))
   }
 
   test("Calculating negation") {

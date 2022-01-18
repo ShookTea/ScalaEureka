@@ -12,7 +12,6 @@ object AllExtensions extends LongExtension
 
   trait ConstantExtensions {
     def toDecimalNumber: DecimalNumber
-    def toIntegerNumber: IntegerNumber
 
     def +(constant: Constant): Constant = toDecimalNumber + constant
     def -(constant: Constant): Constant = toDecimalNumber - constant

@@ -8,8 +8,4 @@ class StringExtensionTest extends AnyFunSuite {
   test("Converting to decimal number") {
     assert("-15.33".toDecimalNumber == DecimalNumber("-15.33"))
   }
-
-  test("Converting to integer number") {
-    assert("-15.79".toIntegerNumber == IntegerNumber(-16))
-  }
 }

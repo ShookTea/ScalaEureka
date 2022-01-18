@@ -6,7 +6,6 @@ class IntegerNumber private(val integer: BigInt) extends Constant {
   override def toBigDecimal: BigDecimal = BigDecimal(integer)
   override def roundToBigInt: BigInt = integer
   override def toDecimalNumber: DecimalNumber = DecimalNumber(toBigDecimal)
-  override def toIntegerNumber: IntegerNumber = this
 
   override def hashCode(): Int = integer.hashCode()
   override def toString: String = integer.toString()
@@ -14,8 +13,8 @@ class IntegerNumber private(val integer: BigInt) extends Constant {
     case IntegerNumber(i) => i == integer
     case DecimalNumber(d) => d.toBigIntExact contains integer
     case i: BigInt => i == integer
-    case l: Long => integer == l.toIntegerNumber.integer
-    case i: Int => integer == i.toIntegerNumber.integer
+    case l: Long => toDecimalNumber == l.toDecimalNumber
+    case i: Int => toDecimalNumber == i.toDecimalNumber
     case d: BigDecimal => toDecimalNumber.decimal == d.toDecimalNumber.decimal
     case d: Double => toDecimalNumber.decimal == d.toDecimalNumber.decimal
     case _ => false
@@ -55,9 +54,4 @@ class IntegerNumber private(val integer: BigInt) extends Constant {
 object IntegerNumber {
   def apply(integer: BigInt): IntegerNumber = new IntegerNumber(integer)
   def unapply(arg: IntegerNumber): Option[BigInt] = Some(arg.integer)
-
-  def apply(long: Long): IntegerNumber = IntegerNumber(BigInt(long))
-  def apply(bigDecimal: BigDecimal): IntegerNumber = DecimalNumber(bigDecimal).toIntegerNumber
-  def apply(string: String): IntegerNumber = IntegerNumber(BigDecimal(string))
-  def apply(double: Double): IntegerNumber = IntegerNumber(BigDecimal(double))
 }

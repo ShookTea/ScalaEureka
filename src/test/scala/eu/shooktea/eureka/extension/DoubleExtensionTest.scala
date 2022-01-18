@@ -8,8 +8,4 @@ class DoubleExtensionTest extends AnyFunSuite {
   test("Converting to decimal number") {
     assert((-5.7).toDecimalNumber == DecimalNumber(-5.7))
   }
-
-  test("Converting to integer number") {
-    assert((-5.7).toIntegerNumber == IntegerNumber(-6))
-  }
 }

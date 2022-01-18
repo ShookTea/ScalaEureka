@@ -6,7 +6,6 @@ import eu.shooktea.eureka.extension.AllExtensions._
 class DecimalNumber private(val decimal: BigDecimal) extends Constant {
   override def toBigDecimal: BigDecimal = decimal
   override def toDecimalNumber: DecimalNumber = this
-  override def toIntegerNumber: IntegerNumber = IntegerNumber(roundToBigInt)
 
   override def hashCode(): Int = decimal.hashCode()
   override def toString: String = decimal.toString()

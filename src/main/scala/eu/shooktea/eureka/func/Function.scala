@@ -8,11 +8,11 @@ trait Function {
     apply(args.map {
       case (k, v) => (k, v match {
         case c: Constant => c
-        case i: BigInt => i.toIntegerNumber
-        case l: Long => l.toIntegerNumber
-        case i: Int => i.toIntegerNumber
-        case s: Short => s.toIntegerNumber
-        case b: Byte => b.toIntegerNumber
+        case i: BigInt => i.toDecimalNumber
+        case l: Long => l.toDecimalNumber
+        case i: Int => i.toDecimalNumber
+        case s: Short => s.toDecimalNumber
+        case b: Byte => b.toDecimalNumber
         case d: BigDecimal => d.toDecimalNumber
         case d: Double => d.toDecimalNumber
         case f: Float => f.toDecimalNumber
@@ -54,8 +54,8 @@ trait Function {
 object Function {
   def abs(f: Function): Function = AbsoluteValueFunction(f)
   def abs(c: Constant): Constant = c.abs
-  def abs(i: BigInt): Constant = i.toIntegerNumber.abs
-  def abs(l: Long): Constant = l.toIntegerNumber.abs
+  def abs(i: BigInt): Constant = i.toDecimalNumber.abs
+  def abs(l: Long): Constant = l.toDecimalNumber.abs
   def abs(d: BigDecimal): Constant = d.toDecimalNumber.abs
   def abs(d: Double): Constant = d.toDecimalNumber.abs
 }
