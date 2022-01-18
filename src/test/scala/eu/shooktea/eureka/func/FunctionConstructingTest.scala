@@ -1,6 +1,5 @@
 package eu.shooktea.eureka.func
 
-import eu.shooktea.eureka.constant.IntegerNumber
 import org.scalatest.funsuite.AnyFunSuite
 import eu.shooktea.eureka.extension.AllExtensions._
 import eu.shooktea.eureka.func.Function._
@@ -12,8 +11,8 @@ class FunctionConstructingTest extends AnyFunSuite {
 
     val func = -1 * abs(x + y) + 5
     val result = func(
-      x -> IntegerNumber(-1),
-      y -> IntegerNumber(-2),
+      x -> -1,
+      y -> -2,
     )
 
     assert(result == 2)

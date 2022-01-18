@@ -1,61 +1,39 @@
 package eu.shooktea.eureka.func
 
-import eu.shooktea.eureka.constant.Constant
-import eu.shooktea.eureka.extension.AllExtensions._
-
 trait Function {
-  def apply(args: (Variable, Any)*): Constant =
+  def apply(args: (Variable, Any)*): BigDecimal =
     apply(args.map {
       case (k, v) => (k, v match {
-        case c: Constant => c
-        case i: BigInt => i.toIntegerNumber
-        case l: Long => l.toIntegerNumber
-        case i: Int => i.toIntegerNumber
-        case s: Short => s.toIntegerNumber
-        case b: Byte => b.toIntegerNumber
-        case d: BigDecimal => d.toDecimalNumber
-        case d: Double => d.toDecimalNumber
-        case f: Float => f.toDecimalNumber
+        case v: BigDecimal => v
+        case v: BigInt => BigDecimal(v)
+        case v: Long => BigDecimal(v)
+        case v: Int => BigDecimal(v)
+        case v: Short => BigDecimal(v)
+        case v: Byte => BigDecimal(v)
+        case v: Double => BigDecimal(v)
+        case v: Float => BigDecimal(v)
       })
     }.toMap)
-  def apply(args: Map[Variable,Constant]): Constant
+
+  def apply(args: Map[Variable,BigDecimal]): BigDecimal
+
   def derivative(v: Variable): Function
   def d(v: Variable): Function = derivative(v)
 
   def +(other: Function): Function = AddFunction(this, other)
-  def +(other: Constant): Function = this + other.toConstFunction
-  def +(other: BigInt): Function = this + other.toDecimalNumber
-  def +(other: Long): Function = this + other.toDecimalNumber
-  def +(other: BigDecimal): Function = this + other.toDecimalNumber
-  def +(other: Double): Function = this + other.toDecimalNumber
+  def +(other: BigDecimal): Function = this + ConstantFunction(other)
 
   def -(other: Function): Function = SubtractFunction(this, other)
-  def -(other: Constant): Function = this - other.toConstFunction
-  def -(other: BigInt): Function = this - other.toDecimalNumber
-  def -(other: Long): Function = this - other.toDecimalNumber
-  def -(other: BigDecimal): Function = this - other.toDecimalNumber
-  def -(other: Double): Function = this - other.toDecimalNumber
+  def -(other: BigDecimal): Function = this - ConstantFunction(other)
 
   def *(other: Function): Function = MultiplyFunction(this, other)
-  def *(other: Constant): Function = this * other.toConstFunction
-  def *(other: BigInt): Function = this * other.toDecimalNumber
-  def *(other: Long): Function = this * other.toDecimalNumber
-  def *(other: BigDecimal): Function = this * other.toDecimalNumber
-  def *(other: Double): Function = this * other.toDecimalNumber
+  def *(other: BigDecimal): Function = this * ConstantFunction(other)
 
   def /(other: Function): Function = DivideFunction(this, other)
-  def /(other: Constant): Function = this / other.toConstFunction
-  def /(other: BigInt): Function = this / other.toDecimalNumber
-  def /(other: Long): Function = this / other.toDecimalNumber
-  def /(other: BigDecimal): Function = this / other.toDecimalNumber
-  def /(other: Double): Function = this / other.toDecimalNumber
+  def /(other: BigDecimal): Function = this / ConstantFunction(other)
 }
 
 object Function {
   def abs(f: Function): Function = AbsoluteValueFunction(f)
-  def abs(c: Constant): Constant = c.abs
-  def abs(i: BigInt): Constant = i.toIntegerNumber.abs
-  def abs(l: Long): Constant = l.toIntegerNumber.abs
-  def abs(d: BigDecimal): Constant = d.toDecimalNumber.abs
-  def abs(d: Double): Constant = d.toDecimalNumber.abs
+  def abs(d: BigDecimal): BigDecimal = d.abs
 }
