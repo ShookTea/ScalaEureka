@@ -7,6 +7,6 @@ class ConstantFunctionTest extends AnyFunSuite {
   test("Constant function returns itself") {
     val const = BigDecimal(15)
     val func = ConstantFunction(const)
-    assert(func() == DecimalNumber(const))
+    assert(func() == const)
   }
 }

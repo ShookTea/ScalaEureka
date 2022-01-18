@@ -4,17 +4,17 @@ import eu.shooktea.eureka.constant.Constant
 import eu.shooktea.eureka.extension.AllExtensions._
 
 trait Function {
-  def apply(args: (Variable, Any)*): Constant =
+  def apply(args: (Variable, Any)*): BigDecimal =
     apply(args.map {
       case (k, v) => (k, v match {
-        case i: BigInt => i.toDecimalNumber
-        case l: Long => l.toDecimalNumber
-        case i: Int => i.toDecimalNumber
-        case s: Short => s.toDecimalNumber
-        case b: Byte => b.toDecimalNumber
-        case d: BigDecimal => d.toDecimalNumber
-        case d: Double => d.toDecimalNumber
-        case f: Float => f.toDecimalNumber
+        case v: BigInt => BigDecimal(v)
+        case v: Long => BigDecimal(v)
+        case v: Int => BigDecimal(v)
+        case v: Short => BigDecimal(v)
+        case v: Byte => BigDecimal(v)
+        case v: BigDecimal => v
+        case v: Double => BigDecimal(v)
+        case v: Float => BigDecimal(v)
       })
     }.toMap)
   def apply(args: Map[Variable,Constant]): Constant =
