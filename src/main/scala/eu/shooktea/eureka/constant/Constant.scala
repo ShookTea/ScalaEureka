@@ -42,8 +42,8 @@ trait Constant extends ConstantExtensions {
   def lesserThan(other: Constant): Boolean = lesserThanOrEqual(other) && !equals(other)
   def <(other: Constant): Boolean = lesserThan(other)
 
-  def negation: Constant = IntegerNumber(0) - this
+  def negation: Constant = BigDecimal(0) - this
   def unary_- : Constant = negation
-  def reciprocal: Constant = IntegerNumber(1) / this
-  def abs: Constant = if (this < IntegerNumber(0)) -this else this
+  def reciprocal: Constant = BigDecimal(1) / this
+  def abs: Constant = if (this.toBigDecimal < BigDecimal(0)) -this else this
 }
