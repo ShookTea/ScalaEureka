@@ -32,8 +32,9 @@ In addition to `+ - * /` operators, following functions are also available after
 
 &nbsp;| Function
 ---|---
-`abs(x)` | Absolute value
-`ln(x)` | Natural (base-*e*) logarithm
+`abs(x)` | Absolute value of `x`
+`ln(x)` | Natural (base-*e*) logarithm of `x`
+`log(x)` | Base-10 logarithm of `x`
 
 ### Derivatives
 
