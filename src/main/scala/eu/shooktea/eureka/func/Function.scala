@@ -39,4 +39,7 @@ object Function {
 
   def ln(f: Function): Function = NaturalLogarithmFunction(f)
   def ln(d: BigDecimal): BigDecimal = NaturalLogarithmFunction(ConstantFunction(d))()
+
+  def log(f: Function): Function = BaseTenLogarithmFunction(f)
+  def log(d: BigDecimal): BigDecimal = BaseTenLogarithmFunction(ConstantFunction(d))()
 }
