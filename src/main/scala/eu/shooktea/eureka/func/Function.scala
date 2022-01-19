@@ -36,4 +36,7 @@ trait Function {
 object Function {
   def abs(f: Function): Function = AbsoluteValueFunction(f)
   def abs(d: BigDecimal): BigDecimal = d.abs
+
+  def ln(f: Function): Function = NaturalLogarithmFunction(f)
+  def ln(d: BigDecimal): BigDecimal = NaturalLogarithmFunction(ConstantFunction(d))()
 }
