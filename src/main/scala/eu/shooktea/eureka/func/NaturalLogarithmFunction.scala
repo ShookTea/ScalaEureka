@@ -22,7 +22,7 @@ class NaturalLogarithmFunction(f: Function) extends OneOpFunction(f) {
 
     lnA + b * ln10
   }
-  override def derivative(v: Variable): Function = ???
+  override def derivative(v: Variable): Function = f.d(v) / f
 }
 
 object NaturalLogarithmFunction {
