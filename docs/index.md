@@ -35,6 +35,7 @@ In addition to `+ - * /` operators, following functions are also available after
 `abs(x)` | Absolute value of `x`
 `ln(x)` | Natural (base-*e*) logarithm of `x`
 `log(x)` | Base-10 logarithm of `x`
+`log(b,v)` | Base-`b` logarithm of `v`
 
 ### Derivatives
 
