@@ -1,5 +1,7 @@
 package eu.shooktea.eureka.func
 
+import eu.shooktea.eureka.extension.AllExtensions._
+
 trait Function {
   def apply(args: (Variable, Any)*): BigDecimal =
     apply(args.map {
@@ -42,4 +44,9 @@ object Function {
 
   def log(f: Function): Function = BaseTenLogarithmFunction(f)
   def log(d: BigDecimal): BigDecimal = BaseTenLogarithmFunction(ConstantFunction(d))()
+
+  def log(base: Function, value: Function): Function = ln(value) / ln(base)
+  def log(base: BigDecimal, value: Function): Function = ln(value) / ln(base)
+  def log(base: Function, value: BigDecimal): Function = ln(value) / ln(base)
+  def log(base: BigDecimal, value: BigDecimal): BigDecimal = ln(value) / ln(base)
 }
