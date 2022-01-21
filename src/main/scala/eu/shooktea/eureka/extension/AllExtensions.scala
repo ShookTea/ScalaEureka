@@ -16,5 +16,7 @@ object AllExtensions extends LongExtension
     def -(f: Function): Function = SubtractFunction(ConstantFunction(toBigDecimal), f)
     def *(f: Function): Function = MultiplyFunction(ConstantFunction(toBigDecimal), f)
     def /(f: Function): Function = DivideFunction(ConstantFunction(toBigDecimal), f)
+
+    def ^(f: Function): Function = ConstantFunction(toBigDecimal) ^ f
   }
 }

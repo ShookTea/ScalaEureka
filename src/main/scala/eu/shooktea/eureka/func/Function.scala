@@ -1,6 +1,7 @@
 package eu.shooktea.eureka.func
 
 import eu.shooktea.eureka.extension.AllExtensions._
+import eu.shooktea.eureka.func.Function._
 
 trait Function {
   def apply(args: (Variable, Any)*): BigDecimal =
@@ -33,6 +34,9 @@ trait Function {
 
   def /(other: Function): Function = DivideFunction(this, other)
   def /(other: BigDecimal): Function = this / ConstantFunction(other)
+
+  def ^(other: Function): Function = exp(other * ln(this))
+  def ^(other: BigDecimal): Function = this ^ ConstantFunction(other)
 }
 
 object Function {
