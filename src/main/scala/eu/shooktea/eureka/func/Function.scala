@@ -60,8 +60,11 @@ object Function {
   def exp(d: BigDecimal): BigDecimal = exp(d, 100)
 
   def sin(f: Function): Function = SineFunction(f)
-  def sin(d: BigDecimal): BigDecimal = SineFunction(ConstantFunction(d))()
+  def sin(d: BigDecimal): BigDecimal = sin(ConstantFunction(d))()
 
   def cos(f: Function): Function = CosineFunction(f)
-  def cos(d: BigDecimal): BigDecimal = CosineFunction(ConstantFunction(d))()
+  def cos(d: BigDecimal): BigDecimal = cos(ConstantFunction(d))()
+
+  def tan(f: Function): Function = TangentFunction(f)
+  def tan(d: BigDecimal): BigDecimal = tan(ConstantFunction(d))()
 }
