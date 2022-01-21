@@ -120,4 +120,5 @@ val d3f = d2f d x
 
 `eu.shooktea.eureka.Constants` object defines following constants:
 * `Constants.E` - Euler's number, calculated with usage of `exp(1, i = 100)` (see description of `exp(x, i)` function
-  in [functions section](#functions)). It gives precision up to 33rd decimal digit. 
+  in [functions section](#functions)). It gives precision up to 33rd decimal digit.
+* `Constants.PI` - π, with precision up to 33rd decimal digit.
