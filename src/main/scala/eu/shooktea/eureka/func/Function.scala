@@ -49,4 +49,9 @@ object Function {
   def log(base: BigDecimal, value: Function): Function = ln(value) / ln(base)
   def log(base: Function, value: BigDecimal): Function = ln(value) / ln(base)
   def log(base: BigDecimal, value: BigDecimal): BigDecimal = ln(value) / ln(base)
+
+  def exp(f: Function, iterations: Int): Function = ExpFunction(f, iterations)
+  def exp(f: Function): Function = exp(f, 100)
+  def exp(d: BigDecimal, iterations: Int): BigDecimal = ExpFunction(ConstantFunction(d), iterations)()
+  def exp(d: BigDecimal): BigDecimal = exp(d, 100)
 }
