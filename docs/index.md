@@ -48,6 +48,7 @@ In addition to these operators, following functions are also available after imp
 `cos(x)` | Cosine of `x` (in radians)
 `tan(x)` | Tangent of `x` (in radians)
 `cot(x)` | Cotangent of `x` (in radians)
+`sec(x)` | Secant of `x` (in radians)
 
 **Notes:**
 - There is an additional `exp(x,i)` function defined, that uses Horner's method to evaluate value of `exp(x)` with

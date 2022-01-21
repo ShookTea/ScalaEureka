@@ -9,6 +9,8 @@
     <option name="testKind" value="All in package" />
     <option name="classBuf">
       <list>
+        <option value="eu.shooktea.eureka.func.CotangentFunctionTest" />
+        <option value="eu.shooktea.eureka.func.FunctionConstructingTest" />
         <option value="eu.shooktea.eureka.func.AbsoluteValueFunctionTest" />
         <option value="eu.shooktea.eureka.func.CustomLogarithmFunctionTest" />
         <option value="eu.shooktea.eureka.func.BaseTenLogarithmFunctionTest" />
@@ -21,12 +23,11 @@
         <option value="eu.shooktea.eureka.func.PowerFunctionTest" />
         <option value="eu.shooktea.eureka.func.CosineFunctionTest" />
         <option value="eu.shooktea.eureka.func.DivideFunctionTest" />
+        <option value="eu.shooktea.eureka.func.SecantFunctionTest" />
         <option value="eu.shooktea.eureka.func.TangentFunctionTest" />
         <option value="eu.shooktea.eureka.func.ConstantFunctionTest" />
         <option value="eu.shooktea.eureka.func.MultiplyFunctionTest" />
         <option value="eu.shooktea.eureka.func.SubtractFunctionTest" />
-        <option value="eu.shooktea.eureka.func.CotangentFunctionTest" />
-        <option value="eu.shooktea.eureka.func.FunctionConstructingTest" />
       </list>
     </option>
     <option name="shortenClasspath" value="NONE" />
