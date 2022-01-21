@@ -44,6 +44,8 @@ In addition to these operators, following functions are also available after imp
 `log(x)` | Base-10 logarithm of `x`
 `log(b,v)` | Base-`b` logarithm of `v`
 `exp(x)` | Exponential function (`e^x`)
+`sin(x)` | Sine function (`x` in radians)
+`cos(x)` | Cosine function (`x` in radians)
 
 **Notes:**
 - There is an additional `exp(x,i)` function defined, that uses Horner's method to evaluate value of `exp(x)` with

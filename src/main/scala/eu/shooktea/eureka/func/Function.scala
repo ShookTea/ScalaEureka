@@ -58,4 +58,10 @@ object Function {
   def exp(f: Function): Function = exp(f, 100)
   def exp(d: BigDecimal, iterations: Int): BigDecimal = ExpFunction(ConstantFunction(d), iterations)()
   def exp(d: BigDecimal): BigDecimal = exp(d, 100)
+
+  def sin(f: Function): Function = SineFunction(f)
+  def sin(d: BigDecimal): BigDecimal = SineFunction(ConstantFunction(d))()
+
+  def cos(f: Function): Function = CosineFunction(f)
+  def cos(d: BigDecimal): BigDecimal = CosineFunction(ConstantFunction(d))()
 }
