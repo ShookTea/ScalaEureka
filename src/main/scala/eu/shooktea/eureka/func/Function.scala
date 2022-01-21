@@ -73,4 +73,7 @@ object Function {
 
   def sec(f: Function): Function = 1.0 / cos(f)
   def sec(d: BigDecimal): BigDecimal = sec(ConstantFunction(d))()
+
+  def csc(f: Function): Function = 1.0 / sin(f)
+  def csc(d: BigDecimal): BigDecimal = csc(ConstantFunction(d))()
 }
