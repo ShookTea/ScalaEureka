@@ -19,6 +19,7 @@
         <option value="eu.shooktea.eureka.func.PowerFunctionTest" />
         <option value="eu.shooktea.eureka.func.CosineFunctionTest" />
         <option value="eu.shooktea.eureka.func.DivideFunctionTest" />
+        <option value="eu.shooktea.eureka.func.TangentFunctionTest" />
         <option value="eu.shooktea.eureka.func.ConstantFunctionTest" />
         <option value="eu.shooktea.eureka.func.MultiplyFunctionTest" />
         <option value="eu.shooktea.eureka.func.SubtractFunctionTest" />

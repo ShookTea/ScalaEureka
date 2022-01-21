@@ -46,6 +46,7 @@ In addition to these operators, following functions are also available after imp
 `exp(x)` | Exponential function (`e^x`)
 `sin(x)` | Sine function (`x` in radians)
 `cos(x)` | Cosine function (`x` in radians)
+`tan(x)` | Tangent function (`x` in radians)
 
 **Notes:**
 - There is an additional `exp(x,i)` function defined, that uses Horner's method to evaluate value of `exp(x)` with
