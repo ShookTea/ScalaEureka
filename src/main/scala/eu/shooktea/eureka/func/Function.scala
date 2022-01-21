@@ -70,4 +70,10 @@ object Function {
 
   def cot(f: Function): Function = 1.0 / tan(f)
   def cot(d: BigDecimal): BigDecimal = 1.0 / tan(d)
+
+  def sec(f: Function): Function = 1.0 / cos(f)
+  def sec(d: BigDecimal): BigDecimal = sec(ConstantFunction(d))()
+
+  def csc(f: Function): Function = 1.0 / sin(f)
+  def csc(d: BigDecimal): BigDecimal = csc(ConstantFunction(d))()
 }
