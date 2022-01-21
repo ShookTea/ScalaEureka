@@ -46,7 +46,6 @@ class ExpFunctionTest extends AnyFunSuite {
       val realValue = value / 10.0
       val expectedResult = Math.exp(realValue + Math.exp(realValue))
       val result = df(x -> realValue)
-      val delta = expectedResult - result
       result.doubleValue should be (expectedResult +- 0.001)
     }
   }

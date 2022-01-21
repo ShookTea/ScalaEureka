@@ -36,6 +36,16 @@ In addition to `+ - * /` operators, following functions are also available after
 `ln(x)` | Natural (base-*e*) logarithm of `x`
 `log(x)` | Base-10 logarithm of `x`
 `log(b,v)` | Base-`b` logarithm of `v`
+`exp(x)` | Exponential function (`e^x`)
+
+**Notes:**
+- There is an addition `exp(x,i)` function defined, that uses Horner's method to evaluate value of `exp(x)` with limited
+  iterations `i`. `exp(x,i)` is defined as:
+
+  ![exp(x,i)](https://i.imgur.com/YXpZvLD.png)
+
+  `exp(x)` function, without specified iterations, is an alias of `exp(x, 100)`, where `i = 100` was chosen arbitrarily
+  (although it guarantees that Euler's number calculated as `e = exp(1)` is precise up to 33rd decimal digit).
 
 ### Derivatives
 
@@ -92,3 +102,9 @@ val d2f = df d x
 val d3f = d2f d x
 // d3f(x) = 0
 ```
+
+## Constants
+
+`eu.shooktea.eureka.Constants` object defines following constants:
+* `Constants.E` - Euler's number, calculated with usage of `exp(1, i = 100)` (see description of `exp(x, i)` function
+  in [functions section](#functions)). It gives precision up to 33rd decimal digit. 
