@@ -21,4 +21,33 @@ class ExpFunctionTest extends AnyFunSuite {
       result.doubleValue should be (expectedResult +- 0.0001)
     }
   }
+
+  test("simple derivative") {
+    val x = Variable()
+    val f = exp(x)
+    val df = f d x
+    // df(x) = exp(x)
+
+    for (value <- -100 to 100) {
+      val realValue = value / 10.0
+      val expectedResult = Math.exp(realValue)
+      val result = df(x -> realValue)
+      result.doubleValue should be (expectedResult +- 0.0001)
+    }
+  }
+
+  test("more advanced derivatives") {
+    val x = Variable()
+    val f = exp(exp(x))
+    val df = f d x
+    // df(x) = exp(x + exp(x))
+
+    for (value <- -10 to 10) {
+      val realValue = value / 10.0
+      val expectedResult = Math.exp(realValue + Math.exp(realValue))
+      val result = df(x -> realValue)
+      val delta = expectedResult - result
+      result.doubleValue should be (expectedResult +- 0.001)
+    }
+  }
 }
