@@ -28,7 +28,14 @@ println(result) // -7
 Internally, all constants are converted into `BigDecimal` objects. All function calls also return a `BigDecimal`.
 Importing `AllExtensions._` allows you to use numbers, `BigDecimal` objects etc. on left side of operands.
 
-In addition to `+ - * /` operators, following functions are also available after importing `func._`:
+Defined operators are:
+- `+` (addition)
+- `-` (subtraction)
+- `*` (multiplication)
+- `/` (division)
+- `^` (exponentiation)
+
+In addition to these operators, following functions are also available after importing `func._`:
 
 &nbsp;| Function
 ---|---
@@ -39,13 +46,19 @@ In addition to `+ - * /` operators, following functions are also available after
 `exp(x)` | Exponential function (`e^x`)
 
 **Notes:**
-- There is an addition `exp(x,i)` function defined, that uses Horner's method to evaluate value of `exp(x)` with limited
-  iterations `i`. `exp(x,i)` is defined as:
+- There is an additional `exp(x,i)` function defined, that uses Horner's method to evaluate value of `exp(x)` with
+  limited iterations `i`. `exp(x,i)` is defined as:
 
   ![exp(x,i)](https://i.imgur.com/YXpZvLD.png)
 
   `exp(x)` function, without specified iterations, is an alias of `exp(x, 100)`, where `i = 100` was chosen arbitrarily
   (although it guarantees that Euler's number calculated as `e = exp(1)` is precise up to 33rd decimal digit).
+- Exponentiation (`^` operator) is calculated according to following equation:
+  
+  ![x^y](https://i.imgur.com/lX3Tnn6.png)
+
+  `exp(x)` is calculated with default iterations count. This implementation comes with a limitation: `x` must be a
+  positive number.
 
 ### Derivatives
 
