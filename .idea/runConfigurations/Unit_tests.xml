@@ -13,6 +13,7 @@
         <option value="eu.shooktea.eureka.func.VariableTest" />
         <option value="eu.shooktea.eureka.func.DerivativeTest" />
         <option value="eu.shooktea.eureka.func.AddFunctionTest" />
+        <option value="eu.shooktea.eureka.func.ExpFunctionTest" />
         <option value="eu.shooktea.eureka.func.DivideFunctionTest" />
         <option value="eu.shooktea.eureka.func.ConstantFunctionTest" />
         <option value="eu.shooktea.eureka.func.MultiplyFunctionTest" />
