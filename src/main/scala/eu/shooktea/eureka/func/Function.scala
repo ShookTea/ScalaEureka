@@ -67,4 +67,7 @@ object Function {
 
   def tan(f: Function): Function = TangentFunction(f)
   def tan(d: BigDecimal): BigDecimal = tan(ConstantFunction(d))()
+
+  def cot(f: Function): Function = 1.0 / tan(f)
+  def cot(d: BigDecimal): BigDecimal = 1.0 / tan(d)
 }
